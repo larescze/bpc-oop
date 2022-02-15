@@ -57,7 +57,7 @@ namespace cv1
 
         public static bool operator !=(Complex c1, Complex c2)
         {
-            return c1.realPart != c2.realPart || c1.imaginaryPart != c2.imaginaryPart;
+            return !(c1 == c2);
         }
 
         public static Complex operator -(Complex c)
