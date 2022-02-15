@@ -19,18 +19,18 @@ namespace cv1
 
         public static Complex operator +(Complex c1, Complex c2) 
         {
-            c1.realPart += c2.realPart;
-            c1.imaginaryPart += c2.imaginaryPart;
+            double realPart = c1.realPart + c2.realPart;
+            double imaginaryPart = c1.imaginaryPart + c2.imaginaryPart;
 
-            return c1;
+            return new Complex(realPart, imaginaryPart);
         }
 
         public static Complex operator -(Complex c1, Complex c2)
         {
-            c1.realPart -= c2.realPart;
-            c1.imaginaryPart -= c2.imaginaryPart;
+           double realPart = c1.realPart - c2.realPart;
+           double imaginaryPart = c1.imaginaryPart - c2.imaginaryPart;
 
-            return c1;
+           return new Complex(realPart, imaginaryPart);
         }
 
         public static Complex operator *(Complex c1, Complex c2)
@@ -77,6 +77,11 @@ namespace cv1
 
         public override string ToString()
         {
+             if (this.imaginaryPart < 0)
+             {
+                 return String.Format("{0}{1}i", this.realPart, this.imaginaryPart);
+             }
+
              return String.Format("{0} + {1}i", this.realPart, this.imaginaryPart);
         }
     }
