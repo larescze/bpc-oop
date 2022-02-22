@@ -21,7 +21,7 @@ namespace cv3
             {
                 if (m1.matrix.GetLength(0) == m2.matrix.GetLength(0) && m1.matrix.GetLength(1) == m2.matrix.GetLength(1))
                 {
-                    double[,] matrix = new double[m1.matrix.GetLength(0), m2.matrix.GetLength(1)];
+                    double[,] matrix = new double[m1.matrix.GetLength(0), m1.matrix.GetLength(1)];
 
                     for (int i = 0; i < m1.matrix.GetLength(0); i++)
                     {
@@ -38,12 +38,16 @@ namespace cv3
                     throw new ArgumentException("Matrix are not same size");
                 }
             }
+            catch (ArgumentException e)
+            {
+                Console.Write("Matrix input error: {0}", e.Message);
+            }
             catch (Exception e)
             {
-                Console.WriteLine("Error: " + e.Message);
-
-                return null;
+                Console.WriteLine("Error: {0}", e.Message);   
             }
+
+            return null;
         }
 
         public static Matrix operator -(Matrix m1, Matrix m2)
@@ -52,7 +56,7 @@ namespace cv3
             {
                 if (m1.matrix.GetLength(0) == m2.matrix.GetLength(0) && m1.matrix.GetLength(1) == m2.matrix.GetLength(1))
                 {
-                    double[,] matrix = new double[m1.matrix.GetLength(0), m2.matrix.GetLength(1)];
+                    double[,] matrix = new double[m1.matrix.GetLength(0), m1.matrix.GetLength(1)];
 
                     for (int i = 0; i < m1.matrix.GetLength(0); i++)
                     {
@@ -69,12 +73,16 @@ namespace cv3
                     throw new ArgumentException("Matrix are not same size");
                 }
             }
+            catch (ArgumentException e)
+            {
+                Console.Write("Matrix input error: {0}", e.Message);
+            }
             catch (Exception e)
             {
-                Console.WriteLine("Error: " + e.Message);
-
-                return null;
+                Console.WriteLine("Error: {0}", e.Message);
             }
+
+            return null;
         }
 
         public static Matrix operator *(Matrix m1, Matrix m2)
@@ -108,12 +116,16 @@ namespace cv3
                     throw new ArgumentException("Matrix can't be multiplied");
                 } 
             }
+            catch (ArgumentException e)
+            {
+                Console.Write("Matrix input error: {0}", e.Message);
+            }
             catch (Exception e)
             {
-                Console.WriteLine("Error: " + e.Message);
-
-                return null;
+                Console.WriteLine("Error: {0}", e.Message);                
             }
+
+            return null;
         }
 
         public static bool operator ==(Matrix m1, Matrix m2)
@@ -135,10 +147,10 @@ namespace cv3
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error: " + e.Message);
-
-                return false;
+                Console.WriteLine("Error: {0}", e.Message);
             }
+
+            return false;
         }
 
         public static bool operator !=(Matrix m1, Matrix m2)
@@ -149,10 +161,10 @@ namespace cv3
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error: " + e.Message);
-
-                return false;
+                Console.WriteLine("Error: {0}", e.Message);
             }
+
+            return false;
         }
 
         public static Matrix operator -(Matrix m)
@@ -173,10 +185,10 @@ namespace cv3
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error: " + e.Message);
-
-                return null;
+                Console.WriteLine("Error: {0}", e.Message);
             }
+
+            return null;
         }
 
         public double Determinant()
@@ -201,7 +213,7 @@ namespace cv3
                     }
                     else
                     {
-                       throw new ArgumentException("Dimension is greater than 3x3");
+                       throw new ArgumentException("The dimension of a matrix is greater than 3x3");
                     }
                 } 
                 else
@@ -209,12 +221,16 @@ namespace cv3
                    throw new ArgumentException("Matrix is not square");
                 }
             }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine("Matrix input error: " + e.Message);
+            }
             catch (Exception e)
             {
-                Console.WriteLine("Error: " + e.Message);
-
-                return 0;
+                Console.WriteLine("Error: {0}", e.Message);
             }
+
+            return 0;
         }
 
         public override string ToString()
@@ -225,6 +241,11 @@ namespace cv3
             {
                 for (int j = 0; j < this.matrix.GetLength(1); j++)
                 {
+                    if (this.matrix[i, j] >= 0) 
+                    { 
+                        matrix += " ";    
+                    }
+
                     matrix += this.matrix[i, j] + " ";
                 }
 
