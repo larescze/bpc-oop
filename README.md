@@ -4,3 +4,4 @@ Objected-oriented programming (C#)
 
 Počítačová cvičení:
 - [cv2](https://github.com/larescze/bpc-oop/tree/cv2) - počítačové cvičení č. 2
+- [cv3](https://github.com/larescze/bpc-oop/tree/cv3) - počítačové cvičení č. 3
