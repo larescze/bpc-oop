@@ -107,8 +107,6 @@ namespace cv4
 
         public string[] SortedArray()
         {
-            List<string> wordList = new List<string>();
-          
             char[] delimiters = { ' ', '\n', '!', '?', ',', '.', '(', ')' };
             string[] words = this.Text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
  
