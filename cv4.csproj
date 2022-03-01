@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{724A8733-C421-492C-9669-C9A5E6A0DD08}</ProjectGuid>
+    <ProjectGuid>{E925BD34-EDE3-4303-A799-ED76445CD2B2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>cv3</RootNamespace>
-    <AssemblyName>cv3</AssemblyName>
+    <RootNamespace>cv4</RootNamespace>
+    <AssemblyName>cv4</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Matrix.cs" />
+    <Compile Include="StringStatistics.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

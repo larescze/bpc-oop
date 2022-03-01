@@ -2,35 +2,35 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Obecné informace o sestavení se řídí přes následující 
-// sadu atributů. Změnou hodnot těchto atributů se upraví informace
-// přidružené k sestavení.
-[assembly: AssemblyTitle("cv3")]
+// General Information about an assembly is controlled through the following
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("cv4")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("cv3")]
+[assembly: AssemblyProduct("cv4")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// Nastavení ComVisible na false způsobí neviditelnost typů v tomto sestavení
-// pro komponenty modelu COM. Pokud potřebujete přístup k typu v tomto sestavení
-// komponenty COM, nastavte atribut ComVisible daného typu na hodnotu true.
+// Setting ComVisible to false makes the types in this assembly not visible
+// to COM components.  If you need to access a type in this assembly from
+// COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
-// Následující GUID se používá pro ID knihovny typů, pokud je tento projekt vystavený pro COM.
-[assembly: Guid("724a8733-c421-492c-9669-c9a5e6a0dd08")]
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("e925bd34-ede3-4303-a799-ed76445cd2b2")]
 
-// Informace o verzi sestavení se skládá z těchto čtyř hodnot:
+// Version information for an assembly consists of the following four values:
 //
-//      Hlavní verze
-//      Podverze
-//      Číslo sestavení
-//      Revize
+//      Major Version
+//      Minor Version
+//      Build Number
+//      Revision
 //
-// Můžete zadat všechny hodnoty nebo nastavit výchozí číslo buildu a revize
-// pomocí zástupného znaku * takto:
+// You can specify all the values or you can default the Build and Revision Numbers
+// by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
