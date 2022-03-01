@@ -93,7 +93,7 @@ namespace cv4
             return shortestWords.ToArray();
         }
 
-        public String[] MostCommonWords()
+        public string[] MostCommonWords()
         {
             char[] delimiters = { ' ', '\n', '!', '?', ',', '.', '(', ')' };
             string[] words = this.Text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
