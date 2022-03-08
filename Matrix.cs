@@ -13,7 +13,7 @@ namespace cv3
         {
             get { return matrix.GetLength(0); }
         }
-        public int Columns
+        private int Columns
         {
             get { return matrix.GetLength(1); }
         }
