@@ -4,32 +4,68 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cv4
+namespace cv5
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            string text = "Toto je retezec predstavovany nekolika radky,\n"
-                + "ktere jsou od sebe oddeleny znakem LF (Line Feed).\n"
-                + "Je tu i nejaky ten vykricnik! Pro ucely testovani i otaznik?\n"
-                + "Toto je jen zkratka zkr. ale ne konec vety. A toto je\n"
-                + "posledni veta!";
+            try
+            {
+                // Passenger car example #1
+                PassengerCar car1 = new PassengerCar(35, Car.FuelType.Petrol, 5, 20, 2);
 
-            StringStatistics textStats = new StringStatistics(text);
+                car1.ToggleRadio();
+                car1.SetPreset(1, 115.00);
+                car1.SetPreset(2, 130.15);
+                car1.SetPreset(3, 145.25);
+                car1.TuneRadio(2);
 
-            Console.WriteLine(textStats);
-            Console.WriteLine();
+                // Invalid argument
+                // car1.TuneRadio(5);
 
-            Console.WriteLine("Words total: {0}", textStats.WordsTotal());
-            Console.WriteLine("Rows total: {0}", textStats.RowsTotal());
-            Console.WriteLine("Sentences total: {0}", textStats.SentencesTotal());
-            Console.WriteLine("Longest words: {0}", string.Join(", ", textStats.LongestWords()));
-            Console.WriteLine("Shortest words: {0}", string.Join(", ", textStats.ShortestWords()));
-            Console.WriteLine("Most common words: {0}", string.Join(", ", textStats.MostCommonWords()));
-            Console.WriteLine("Sorted array: {0}" , string.Join(", ", textStats.SortedArray()));
+                Console.WriteLine(car1);
+                Console.WriteLine();
 
-            Console.ReadLine();
+                // Passenger car example #2
+                PassengerCar car2 = new PassengerCar(50, Car.FuelType.Diesel, 5, 30);
+
+                Console.WriteLine(car2);
+                car2.ToggleRadio();
+                Console.WriteLine(car2);
+
+                car2.Passengers = 3;
+                Console.WriteLine(car2);
+
+                // Invalid argument
+                // car2.Passengers = 6;
+
+                Console.WriteLine();
+
+                // Truck example #3
+                Truck truck1 = new Truck(100, Car.FuelType.Diesel, 50);
+                
+                truck1.Refuel(Car.FuelType.Diesel, 25);
+                Console.WriteLine(truck1);
+
+                // Invalid argument
+                // truck1.Refuel(Car.FuelType.Petrol, 25);
+                // truck1.Refuel(Car.FuelType.Diesel, 50);
+
+                truck1.Load = 50;
+                Console.WriteLine(truck1);
+
+                // Invalid argument
+                // truck1.Load = 70;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            } 
+            finally
+            {
+                Console.ReadLine();
+            }
         }
     }
 }

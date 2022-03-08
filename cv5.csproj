@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E925BD34-EDE3-4303-A799-ED76445CD2B2}</ProjectGuid>
+    <ProjectGuid>{78E59911-6983-49A8-A0ED-C07504EFA660}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>cv4</RootNamespace>
-    <AssemblyName>cv4</AssemblyName>
+    <RootNamespace>cv5</RootNamespace>
+    <AssemblyName>cv5</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StringStatistics.cs" />
+    <Compile Include="Car.cs" />
+    <Compile Include="PassengerCar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CarRadio.cs" />
+    <Compile Include="Truck.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
