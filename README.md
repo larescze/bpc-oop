@@ -1,20 +1,13 @@
 # BPC-OOP
 
-## Počítačové cvičení č. 4
+## Počítačové cvičení č. 5
 
-1. Vytvořte vlastní třídu StringStatistics pro statistické vyhodnocování řetězců. Vytvořte
-konstruktor s jedním argumentem typu string.
-2. Vytvořte metody vracející počet slov, počet řádků, počet vět, pole nejdelších slov, pole
-nejkratších slov, pole nejčetnějších slov a setříděné pole slov dle abecedy. Pro rozdělení na
-slova zohledněte existenci interpunkčních znamének v textu. Konec řádku je reprezentován
-znakem \n. Konec věty identifikujte jako tečku, vykřičník či otazník, za nimiž následuje velké
-písmeno nebo konec řetězce.
-3. V metodě Main inicializujte instanci StringStatistics vzorovým textem textem a provolejte
-jednotlivé metody a výsledky zobrazte na konzoli. Použijte následující vzorový text:
-```
-string testovaciText = "Toto je retezec predstavovany nekolika radky,\n"
-+ "ktere jsou od sebe oddeleny znakem LF (Line Feed).\n"
-+ "Je tu i nejaky ten vykricnik! Pro ucely testovani i otaznik?\n"
-+ "Toto je jen zkratka zkr. ale ne konec vety. A toto je\n"
-+ "posledni veta!";
-```
+1. Vytvořte základní třídu Auto a z něj odvozené třídy Nakladni a Osobni.
+2. Vytvořte v třídě Auto vnořený výčtový typ TypPaliva, který bude reprezentovat typ paliva (Benzin, Nafta).
+3. Vhodně rozdělte následující členy do výše uvedených tříd dle pravidel OOP. Odhadněte které členy jsou společné a které jsou spíše specifické pro daný typ vozidla. Vlastnosti: VelikostNadrze, StavNadrze, Palivo, MaxOsob, MaxNaklad, PrepravovanyNaklad, PrepravovaneOsoby. U vlastností, které by se zvenku neměly měnit nastavte set na private nebo protected. Kontrolujte nastavení vlastností PrepravovanyNaklad a PrepravovaneOsoby a v případě pokusu o nastavení vyšší hodnoty vyvolejte výjimku. Přidejte metodu Natankuj s argumenty typPaliva a mnozstvi, která zvýší StavNadrze a v případě, že by měla přetéct nebo při pokusu o natankování nesprávného paliva vyvolejte výjimku.
+4. Vytvořte konstruktory odvozených tříd s argumenty, které budou nastavovat vlastnosti, které jsou pevně dané (jako např. MaxOsob) a budou inicializovat vlastnosti, které se mohou měnit (jako např. inicializace PrepravovaneOsoby na hodnotu 0).
+5. Vytvořte třídu Autoradio. Zakomponujte následující členy s využitím znalostí o zapouzdření. Vlastnosti: NaladenyKmitocet a RadioZapnuto. Metody: NastavPredvolbu s argumenty cislo a kmitocet (interně si předvolby ukládejte do privátního členu typu Dictionary<int, double>) a metodu PreladNaPredvolbu s argumentem cislo (tato nastaví NaladenyKmitocet na
+předem uloženou hodnotu z NastavPredvolbu).
+6. Zakomponujte pomocí vhodného vztahu Autoradio do Auto a zveřejněte potřebné členy.
+7. Do tříd Nakladni, Osobni a Autoradio doplňte metodu ToString, která bude zobrazovat informace o stavu objektu (u aut např. stav nádrže, počet osob nebo nákladu atd.)
+8. Do metody Main napište ukázku na použití výše uvedených odvozených tříd (základní třídy neinstancujte), nastavení a čtení jejich vlastností a provolání metod. Případné výjimky zachyťte a zobrazte. Stav zobrazujte pomocí provolání ToString.
