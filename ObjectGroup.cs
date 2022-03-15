@@ -1,11 +1,11 @@
 ﻿namespace cv6
 {
-    public interface IGroup
+    public interface IObject
     {
         void Draw();
     }
 
-    public abstract class ObjectGroup : IGroup
+    public abstract class ObjectGroup : IObject
     {
         public abstract void Draw();
     }
