@@ -1,13 +1,11 @@
 # BPC-OOP
 
-## Počítačové cvičení č. 5
+## Počítačové cvičení č. 6
 
-1. Vytvořte základní třídu Auto a z něj odvozené třídy Nakladni a Osobni.
-2. Vytvořte v třídě Auto vnořený výčtový typ TypPaliva, který bude reprezentovat typ paliva (Benzin, Nafta).
-3. Vhodně rozdělte následující členy do výše uvedených tříd dle pravidel OOP. Odhadněte které členy jsou společné a které jsou spíše specifické pro daný typ vozidla. Vlastnosti: VelikostNadrze, StavNadrze, Palivo, MaxOsob, MaxNaklad, PrepravovanyNaklad, PrepravovaneOsoby. U vlastností, které by se zvenku neměly měnit nastavte set na private nebo protected. Kontrolujte nastavení vlastností PrepravovanyNaklad a PrepravovaneOsoby a v případě pokusu o nastavení vyšší hodnoty vyvolejte výjimku. Přidejte metodu Natankuj s argumenty typPaliva a mnozstvi, která zvýší StavNadrze a v případě, že by měla přetéct nebo při pokusu o natankování nesprávného paliva vyvolejte výjimku.
-4. Vytvořte konstruktory odvozených tříd s argumenty, které budou nastavovat vlastnosti, které jsou pevně dané (jako např. MaxOsob) a budou inicializovat vlastnosti, které se mohou měnit (jako např. inicializace PrepravovaneOsoby na hodnotu 0).
-5. Vytvořte třídu Autoradio. Zakomponujte následující členy s využitím znalostí o zapouzdření. Vlastnosti: NaladenyKmitocet a RadioZapnuto. Metody: NastavPredvolbu s argumenty cislo a kmitocet (interně si předvolby ukládejte do privátního členu typu Dictionary<int, double>) a metodu PreladNaPredvolbu s argumentem cislo (tato nastaví NaladenyKmitocet na
-předem uloženou hodnotu z NastavPredvolbu).
-6. Zakomponujte pomocí vhodného vztahu Autoradio do Auto a zveřejněte potřebné členy.
-7. Do tříd Nakladni, Osobni a Autoradio doplňte metodu ToString, která bude zobrazovat informace o stavu objektu (u aut např. stav nádrže, počet osob nebo nákladu atd.)
-8. Do metody Main napište ukázku na použití výše uvedených odvozených tříd (základní třídy neinstancujte), nastavení a čtení jejich vlastností a provolání metod. Případné výjimky zachyťte a zobrazte. Stav zobrazujte pomocí provolání ToString.
+1. Vytvořte abstraktní základní třídu GrObjekt a z něj odvozené abstraktní třídy Objekt2D a Objekt3D.
+2. Vytvořte polymorfní rozhraní v GrObjekt. Bude definováno bezargumentovou metodou bez návratové hodnoty s názvem Kresli.
+3. Vytvořte polymorfní rozhraní v Objekt2D. Bude definováno bezargumentovou metodou s návratovou hodnotou typu double a názvem SpoctiPlochu.
+4. Vytvořte polymorfní rozhraní v Objekt3D. Bude definováno dvěma bezargumentovými metodami s návratovou hodnotou typu double a názvy SpoctiPovrch a SpoctiObjem.
+5. Vytvořte třídy: Kruh, Obdelnik, Elipsa, Trojuhelnik, Kvadr, Valec, Koule a Jehlan odvozené z Objekt2D či Objekt3D. Vytvořte nezbytné datové členy popisující rozměry objektu a vytvořte konstruktory, které tyto datové členy naplní. Ve třídách pak implementujte metody požadované polymorfním rozhraním.
+6. Pozn.: Metoda Kresli bude pro jednoduchost psát na konzolu např. text typu: „Valec (r = 1,54; v = 5,41)“.
+7. Do metody Main napište ukázku naplnění pole typů GrObjekt konkrétními grafickými objekty. Procházejte pole, provolávejte metodu Kresli a s využitím operátoru is sečtěte celkovou plochu, celkový povrch a celkový objem.
