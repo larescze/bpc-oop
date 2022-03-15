@@ -29,9 +29,9 @@ namespace cv6
             return this.Length * this.Width * this.Height;
         }
 
-        public override void Draw()
+        public override string Draw()
         {
-            Console.WriteLine("{0}, S = {1:F2}, V = {2:F2}", this.ToString(), this.ComputeSurface(), this.ComputeVolume());
+           return String.Format("{0}, S = {1:F2}, V = {2:F2}", this.ToString(), this.ComputeSurface(), this.ComputeVolume());
         }
         public override string ToString()
         {

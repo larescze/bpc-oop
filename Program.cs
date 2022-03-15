@@ -17,7 +17,7 @@ namespace cv6
             Sphere sphere = new Sphere(4);
             Pyramid pyramid = new Pyramid(4, 6, 8);
 
-            List<ObjectGroup> objects = new List<ObjectGroup>() {
+            List<GraphicObject> objects = new List<GraphicObject>() {
                 circle,
                 rectangle,
                 square,
@@ -35,7 +35,7 @@ namespace cv6
 
             foreach (var obj in objects)
             {
-                obj.Draw();
+                Console.WriteLine(obj.Draw());
 
                 if (obj is Object2D object2D)
                 {

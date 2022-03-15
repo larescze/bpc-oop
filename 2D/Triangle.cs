@@ -22,9 +22,9 @@ namespace cv6
             return Math.Sqrt(semiPerimeter * (semiPerimeter - this.SideA) * (semiPerimeter - this.SideB) * (semiPerimeter - this.SideC));
         }
 
-        public override void Draw()
+        public override string Draw()
         {
-            Console.WriteLine("{0}, S = {1:F2}", this.ToString(), this.ComputeArea());
+            return String.Format("{0}, S = {1:F2}", this.ToString(), this.ComputeArea());
         }
 
         public override string ToString()

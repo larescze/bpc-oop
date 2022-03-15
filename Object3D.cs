@@ -6,7 +6,7 @@
         double ComputeVolume();
     }
 
-    public abstract class Object3D : ObjectGroup, IObject3D
+    public abstract class Object3D : GraphicObject, IObject3D
     {
         public abstract double ComputeSurface();
 

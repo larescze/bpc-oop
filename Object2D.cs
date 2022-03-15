@@ -5,7 +5,7 @@
         double ComputeArea();
     }
 
-    public abstract class Object2D : ObjectGroup, IObject2D
+    public abstract class Object2D : GraphicObject, IObject2D
     {
         public abstract double ComputeArea();
     }

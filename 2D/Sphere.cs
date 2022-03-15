@@ -20,9 +20,9 @@ namespace cv6
             return 4 / 3 * Math.PI * Math.Pow(this.Radius, 3);
         }
 
-        public override void Draw()
+        public override string Draw()
         {
-            Console.WriteLine("{0}, S = {1:F2}, V = {2:F2}", this.ToString(), this.ComputeSurface(), this.ComputeVolume());
+            return String.Format("{0}, S = {1:F2}, V = {2:F2}", this.ToString(), this.ComputeSurface(), this.ComputeVolume());
         }
 
         public override string ToString()
