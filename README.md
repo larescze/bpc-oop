@@ -7,3 +7,4 @@ Počítačová cvičení:
 - [cv3](https://github.com/larescze/bpc-oop/tree/cv3) - počítačové cvičení č. 3
 - [cv4](https://github.com/larescze/bpc-oop/tree/cv4) - počítačové cvičení č. 4
 - [cv5](https://github.com/larescze/bpc-oop/tree/cv5) - počítačová cvičení č. 5
+- [cv6](https://github.com/larescze/bpc-oop/tree/cv6) - počítačová cvičení č. 6
