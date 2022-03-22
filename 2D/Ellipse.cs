@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace cv6
+namespace cv7
 {
-    public class Ellipse : Object2D
+    internal class Ellipse : Object2D
     {
         public double MajorRadius { get; set; }
         public double MinorRadius { get; set; }
@@ -11,20 +11,17 @@ namespace cv6
         {
             this.MajorRadius = majorRadius;
             this.MinorRadius = minorRadius;
+            this.Area = this.ComputeArea();
         }
+
         public override double ComputeArea()
         {
             return Math.PI * this.MajorRadius * this.MinorRadius;
         }
 
-        public override string Draw()
-        {
-            return String.Format("{0}, S = {1:F2}", this.ToString(), this.ComputeArea());
-        }
-
         public override string ToString()
         {
-            return String.Format("Ellipse: a = {0}, b = {1}", this.MajorRadius, this.MinorRadius);
+            return String.Format("Ellipse: a = {0}, b = {1}, S = {2:F2}", this.MajorRadius, this.MinorRadius, this.Area);
         }
     }
 }

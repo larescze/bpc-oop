@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D6FFF120-51AE-4105-8213-93E61980D942}</ProjectGuid>
+    <ProjectGuid>{997689F2-76F2-4A34-BDC4-B4D02274B0FB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>cv6</RootNamespace>
-    <AssemblyName>cv6</AssemblyName>
+    <RootNamespace>cv7</RootNamespace>
+    <AssemblyName>cv7</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,20 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Circle.cs" />
-    <Compile Include="Cuboid.cs" />
-    <Compile Include="Cylinder.cs" />
-    <Compile Include="Ellipse.cs" />
+    <Compile Include="2D\Circle.cs" />
+    <Compile Include="2D\Ellipse.cs" />
+    <Compile Include="Extreme.cs" />
+    <Compile Include="Interfaces\I2D.cs" />
     <Compile Include="Object2D.cs" />
-    <Compile Include="Object3D.cs" />
-    <Compile Include="GraphicObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pyramid.cs" />
-    <Compile Include="Rectangle.cs" />
-    <Compile Include="Sphere.cs" />
-    <Compile Include="Square.cs" />
-    <Compile Include="Triangle.cs" />
+    <Compile Include="2D\Rectangle.cs" />
+    <Compile Include="2D\Square.cs" />
+    <Compile Include="2D\Triangle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

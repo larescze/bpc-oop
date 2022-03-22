@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace cv6
+namespace cv7
 {
     public class Triangle : Object2D
     {
@@ -13,6 +13,7 @@ namespace cv6
             this.SideA = sideA;
             this.SideB = sideB;
             this.SideC = sideC;
+            this.Area = this.ComputeArea();
         }
 
         public override double ComputeArea()
@@ -22,14 +23,9 @@ namespace cv6
             return Math.Sqrt(semiPerimeter * (semiPerimeter - this.SideA) * (semiPerimeter - this.SideB) * (semiPerimeter - this.SideC));
         }
 
-        public override string Draw()
-        {
-            return String.Format("{0}, S = {1:F2}", this.ToString(), this.ComputeArea());
-        }
-
         public override string ToString()
         {
-            return String.Format("Triangle: a = {0}, b = {1}, c = {2}", this.SideA, this.SideB, this.SideC);
+            return String.Format("Triangle: a = {0}, b = {1}, c = {2}, S = {3:F2}", this.SideA, this.SideB, this.SideC, this.Area);
         }
     }
 }

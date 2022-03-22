@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace cv6
+namespace cv7
 {
     public class Circle : Object2D
     {
@@ -9,6 +9,7 @@ namespace cv6
         public Circle(double radius)
         {
             this.Radius = radius;
+            this.Area = this.ComputeArea();
         }
 
         public override double ComputeArea()
@@ -16,14 +17,9 @@ namespace cv6
             return Math.PI * Math.Pow(this.Radius, 2);
         }
 
-        public override string Draw()
-        {
-            return String.Format("{0}, S = {1:F2}", this.ToString(), this.ComputeArea());
-        }
-
         public override string ToString()
         {
-            return String.Format("Circle: r = {0}", this.Radius);
+            return String.Format("Circle: r = {0}, S = {1:F2}", this.Radius, this.Area);
         }
     }
 }
