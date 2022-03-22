@@ -9,20 +9,21 @@ namespace cv7
 
         public int CompareTo(object obj)
         {
-            if (!(obj is Object2D obj2D))
-            {
-                throw new ArgumentException("Object can't be compared");
-            }
-            else if (obj == null || this.Area > obj2D.Area)
+            if (obj == null)
             {
                 return 1;
             }
-            else if (this.Area == obj2D.Area)
-            {
-                return 0;
-            }
 
-            return -1;
+            Object2D obj2D = obj as Object2D;
+
+            if (obj2D != null)
+            {
+                return this.ComputeArea().CompareTo(obj2D.ComputeArea());
+            }
+            else
+            {
+                throw new ArgumentException("Object can't be compared");
+            }
         }
     }
 }
