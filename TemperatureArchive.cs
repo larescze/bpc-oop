@@ -10,7 +10,7 @@ namespace cv8
     {
         private SortedDictionary<int, Temperature> _archive;
 
-        private const string Directory = "PUT_YOUR_ABSOLUTE_PATH_HERE";
+        private const string Directory = "C:\\Users\\lazar\\Downloads\\cv8\\cv8";
         private const string Input = "input.txt";
         private const string Output = "output.txt";
 
@@ -31,12 +31,13 @@ namespace cv8
                     while ((line = sr.ReadLine()) != null)
                     {
                         line.Trim().Replace(" ", "");
-                        temperatures.Clear();
+                        temperatures = new List<double>();
+
                         string[] splitter = line.Split(new Char[] { ':', ';' });
 
                         for (int i = 1; i < splitter.Length; i++)
                         {
-                            temperatures.Add(Convert.ToDouble(splitter[i]));
+                            temperatures.Add(double.Parse(splitter[i], System.Globalization.CultureInfo.GetCultureInfo("cs-CZ").NumberFormat));
                         }
 
                         this._archive.Add(Convert.ToInt32(splitter[0]), new Temperature(Convert.ToInt32(splitter[0]), temperatures));
@@ -58,7 +59,7 @@ namespace cv8
                 {
                     foreach (Temperature temp in this._archive.Values)
                     {
-                        sw.Write(String.Format("{0}: {1}", temp.Year, String.Join("; ", temp.Temperatures.Select(x => string.Format("{0:N1}", x))) + "\n"));
+                        sw.Write(String.Format("{0}: {1}\n", temp.Year, String.Join("; ", temp.Temperatures.Select(x => x.ToString("N1", System.Globalization.CultureInfo.GetCultureInfo("cs-CZ").NumberFormat)))));
                     }
                 }
             }
@@ -78,24 +79,12 @@ namespace cv8
 
         public Temperature Find(int year)
         {
-            if (this._archive.TryGetValue(year, out Temperature value))
-            {
-                return value;
-            }
-
-            return null;
+            return this._archive.FirstOrDefault(x => x.Key == year).Value;
         }
 
         public string YearAverage()
         {
-            StringBuilder output = new StringBuilder();
-
-            foreach (Temperature temp in this._archive.Values)
-            {
-                output = output.AppendLine(String.Format("{0}: {1:N1}", temp.Year, temp.Average));
-            }
-
-            return output.ToString();
+            return String.Join("", this._archive.Values.Select(x => String.Format("{0}: {1:N1}\n", x.Year, x.Average)));
         }
 
         public string MonthAverage()
@@ -103,26 +92,9 @@ namespace cv8
             StringBuilder output = new StringBuilder();
             List<double> averages = new List<double>();
 
-            double average;
-            int count;
-
-            for (int i = 0; i < this._archive.FirstOrDefault().Value.Temperatures.Count(); i++)
-            {
-                average = 0;
-                count = 0;
-
-                foreach (Temperature temp in this._archive.Values)
-                {
-                    average += temp.Temperatures[i];
-                    count++;
-                }
-
-                averages.Add(average / count);
-            }
-
-            output = output.AppendLine(String.Join("", averages.Select((x, i) => string.Format("{0}: {1:N1}\n", ++i, x))));
-
-            return output.ToString();
+            return String.Join("", Enumerable.Range(1, 12)
+                .Select(month => new KeyValuePair<int, double>(month, this._archive.Select(x => x.Value.Temperatures.ElementAt(month - 1)).Average()))
+                .Select(x => String.Format("{0}: {1:N1}\n", x.Key, x.Value)));
         }
         public string Print()
         {
