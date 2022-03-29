@@ -31,8 +31,8 @@ namespace cv8
                 archive.Calibration(-0.1);
                 Console.WriteLine(archive.Print());
 
-                Console.WriteLine("Find 2010");
-                Console.WriteLine(archive.Find(2010));
+                Console.WriteLine("Find 2012");
+                Console.WriteLine(archive.Find(2012));
                 Console.WriteLine();
 
                 Console.WriteLine("Year average");
