@@ -10,7 +10,7 @@ namespace cv8
     {
         private SortedDictionary<int, Temperature> _archive;
 
-        private const string Directory = "C:\\Users\\lazar\\Downloads\\cv8\\cv8";
+        private const string Directory = "PUT_YOUR_ABSOLUTE_PATH_HERE";
         private const string Input = "input.txt";
         private const string Output = "output.txt";
 
