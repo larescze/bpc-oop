@@ -9,5 +9,6 @@ Počítačová cvičení:
 - [cv5](https://github.com/larescze/bpc-oop/tree/cv5) - počítačové cvičení č. 5
 - [cv6](https://github.com/larescze/bpc-oop/tree/cv6) - počítačové cvičení č. 6
 - [cv7](https://github.com/larescze/bpc-oop/tree/cv7) - počítačové cvičení č. 7
-- [cv8](https://github.com/larescze/bpc-oop/tree/cv8) - počítačové cvičení č. 9
-- - [cv8](https://github.com/larescze/bpc-oop/tree/cv9) - počítačové cvičení č. 9
+- [cv8](https://github.com/larescze/bpc-oop/tree/cv8) - počítačové cvičení č. 8
+- [cv9](https://github.com/larescze/bpc-oop/tree/cv9) - počítačové cvičení č. 9
+- [cv10](https://github.com/larescze/bpc-oop/tree/cv10) - počítačové cvičení č. 10
