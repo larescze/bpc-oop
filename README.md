@@ -1,15 +1,12 @@
 # BPC-OOP
 
-## Počítačové cvičení č. 10
+## Počítačové cvičení č. 11
 
-1. Vytvořte nový databázový soubor SQL serveru Vyuka.mdf.
-2. Navrhněte schéma databáze, které bude udržovat informace o výuce: Seznam předmětů (zkratka, název předmětu) a seznam studentů (jméno, příjmení, datum narození, ID studenta).
-3. Navrhněte správné tabulky a sloupce v tabulkách se správnými typy, případnou spojovací tabulku (student může mít zapsáno více předmětů a zároveň v předmětu může být zapsáno více studentů). Tvorbu tabulek zapište do SQL skriptu.
-4. Vytvořte vhodné primární a cizí klíče.
-5. Přidejte tabulku Hodnocení s primárním klíčem sestávající ze dvou sloupců (ID studenta a zkratka předmětu) a datem hodnocení a samotným číselným hodnocením studenta.
-6. Naplňte tabulky vhodnými daty.
-7. Vytvořte skript, do kterého zapíšete následující SELECT dotazy:
-8. Dotaz, kde vypíšete všechny studenty a předměty které mají zapsané. Použijte LEFT JOIN.
-9. Dotaz, kde vypíšete příjmení studentů a počet studentů, kteří mají stejné příjmení. Seřaďte je sestupně dle četnosti příjmení. Použijte GROUP BY.
-10. Dotaz, kde vypíšete předměty, ve kterých je zapsáno méně než 3 studenti.
-11. Dotaz, kde vypíšete všechny předměty a nejlepší, nejhorší a průměrné hodnocení v předmětu. Dále pak počet hodnocených studentů v předmětu. Použijte GROUP BY.
+1. Použijte databázový soubor SQL serveru z předchozích cvičení Vyuka.mdf.
+2. Pomocí aplikace Visual Studio Installer se ujistěte, že máte ve Visual Studiu nainstalovanou komponentu „Nástroje LINQ to SQL“.
+3. Vytvořte v třídu LINQ to SQL Classes a přetáhněte sem všechny tabulky z databáze.
+4. Vytvořte metodu, která naplní databázi vzorovými daty pomocí LINQ to SQL. Tuto metodu pak provoláte na začátku programu v metodě Main. V této metodě otestujte před každým vložením, zdali tam již záznam s tímto primárním klíčem neexistuje, pokud ano, vkládání záznamu přeskočte. Pro test existence využijte extension metodu Any nad LINQ to SQL tabulkou.
+5. Vytvořte pohled (VIEW) ve kterém vypíšete předměty spolu s počty zapsaných studentů. Vytvořte metodu, která zobrazí data z toho VIEW v konzolovém okně seřazená dle počtu studentů sestupně.
+6. Vytvořte metody StudentiPredmetu s návratovou hodnotou typu IEnumerable<Student> a PredmetyStudenta s návratovou hodnotou typu IEnumerable<Predmet>, které vrací studenty předmětu zadaného zkratkou v argumentu a předměty, které má student, zadaný pomocí Id v argumentu metody, zapsané.
+7. Nově implementované metody vzorově provolejte v metodě Main.
+8. Vytiskněte seznam předmětů spolu s průměrnou známkou v tomto předmětu. Známky budou čerpány z tabulky Hodnoceni.
