@@ -1,0 +1,28 @@
+﻿@model cv12_WebApp.Models.CalculationData
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="text-center">
+        @Html.TextBoxFor(model => model.Operand1)
+        @Html.DropDownListFor(m => m.Operation, new List<SelectListItem>
+        {
+            new SelectListItem{Text="+", Value="+"},
+            new SelectListItem{Text="-", Value="-"},
+            new SelectListItem{Text="/", Value="/"},
+            new SelectListItem{Text="*", Value="*"}
+        })
+        @Html.TextBoxFor(model => model.Operand2)
+        <input type="submit" />
+        @if (ViewData["result"] != null)
+        {
+            <p>Výsledek:</p> @ViewData["result"]
+        }
+    </div>
+}
