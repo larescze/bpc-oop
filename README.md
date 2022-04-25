@@ -1,12 +1,7 @@
 # BPC-OOP
 
-## Počítačové cvičení č. 11
+## Počítačové cvičení č. 12
 
-1. Použijte databázový soubor SQL serveru z předchozích cvičení Vyuka.mdf.
-2. Pomocí aplikace Visual Studio Installer se ujistěte, že máte ve Visual Studiu nainstalovanou komponentu „Nástroje LINQ to SQL“.
-3. Vytvořte v třídu LINQ to SQL Classes a přetáhněte sem všechny tabulky z databáze.
-4. Vytvořte metodu, která naplní databázi vzorovými daty pomocí LINQ to SQL. Tuto metodu pak provoláte na začátku programu v metodě Main. V této metodě otestujte před každým vložením, zdali tam již záznam s tímto primárním klíčem neexistuje, pokud ano, vkládání záznamu přeskočte. Pro test existence využijte extension metodu Any nad LINQ to SQL tabulkou.
-5. Vytvořte pohled (VIEW) ve kterém vypíšete předměty spolu s počty zapsaných studentů. Vytvořte metodu, která zobrazí data z toho VIEW v konzolovém okně seřazená dle počtu studentů sestupně.
-6. Vytvořte metody StudentiPredmetu s návratovou hodnotou typu IEnumerable<Student> a PredmetyStudenta s návratovou hodnotou typu IEnumerable<Predmet>, které vrací studenty předmětu zadaného zkratkou v argumentu a předměty, které má student, zadaný pomocí Id v argumentu metody, zapsané.
-7. Nově implementované metody vzorově provolejte v metodě Main.
-8. Vytiskněte seznam předmětů spolu s průměrnou známkou v tomto předmětu. Známky budou čerpány z tabulky Hodnoceni.
+1. Vytvořte nový projekt založený na šabloně „ASP.NET Web Application (.NET Framework)“, profil „Web API“. Půjde o webovou službu sloužící jako kalkulačka s operacemi plus, minus, krát a děleno. Data mezi klientem a webovou službou si budeme předávat ve formátu který bude definován následující pomocnou třídou (v projektu si ji přidáme ideálně do složky Models). Nahraďte ve vygenerované třídě ValuesController ve složce Controllers výchozí metodu public void Post([FromBody] string value), novou metodou, která bude konzumovat data ve formátu třídy CalcData a výsledek bude typu decimal: public decimal Post([FromBody] CalcData calcData). Tuto metodu implementujte, využijte k tomu příkaz switch pro hodnotu calcData.Operace.
+2. Vytvořte webovou aplikaci představující jednoduchou kalkulačku pracující se dvěma operandy a využívající pro samotný výpočet webovou službu (založeno na šabloně „ASP.NET Web Application (.NET Framework)“, profil „Empty“). Vytvořte pomocnou třídu pro výměnu dat CalcData jako v projektu v bodu 1. Vytvořte 2 webové formuláře (Web Form) Default a Vysledek. Pro snadnou komunikaci s webovou službou přidáme do projektu nuget balíček (pravé tlačítko myší na projektu v Solution exploreru a pak volbou Manage NuGet Packages…) „Microsoft.AspNet.WebApi.Client“. Port v nastavení BaseAddress zvolte takový jaký uvidíte při spuštěné webové službě z bodu 1 v prohlížeči (může být u každého z Vás jiný). Aby dotaz na webovou službu fungoval, musí být projekt s webovou službou z bodu 1 spuštěn.
+3. Vytvořte WPF aplikaci (založeno na šabloně „WPF App (.NET Framework)“) sloužící stejnému účelu, tedy představující jednoduchou kalkulačku pracující se dvěma operandy a využívající pro samotný výpočet webovou službu. Volání služby udělejte obdobným způsobem jako u bodu 2.
